@@ -49,6 +49,9 @@
     <Reference Include="0Harmony, Version=2.9.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\HarmonyX.2.9.0\lib\net45\0Harmony.dll</HintPath>
     </Reference>
+	  <Reference Include="BepInEx">
+		  <HintPath>..\..\..\Valheim\BepInEx\BepInEx\core\BepInEx.dll</HintPath>
+	  </Reference>
     <Reference Include="Jotunn, Version=2.15.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\JotunnLib.2.15.0\lib\net462\Jotunn.dll</HintPath>
     </Reference>
