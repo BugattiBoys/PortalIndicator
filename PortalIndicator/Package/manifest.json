@@ -1,8 +1,8 @@
 ﻿{
   "name": "PortalIndicator",
-  "description": "",
-  "version_number": "0.0.1",
-  "website_url": "",
+  "description": "Automatically add map pins for portals",
+  "version_number": "0.0.3",
+  "website_url": "https://github.com/BugattiBoys/PortalIndicator",
   "dependencies": [
     "denikson-BepInExPack_Valheim-5.4.2202",
     "ValheimModding-Jotunn-2.15.0"

@@ -12,7 +12,7 @@ namespace PortalIndicator.RPC
     {
         public static void SyncRequest(long sender, string reason)
         {
-            Log.Info($"Received sync request from `{sender}` because: {reason}");
+            Log.Debug($"Received sync request from `{sender}` because: {reason}");
             PortalIndicator.ProcessSyncRequest();
         }
 
@@ -27,7 +27,7 @@ namespace PortalIndicator.RPC
                 // return;
             }
 
-            Log.Info($"Sending all portals to everybody");
+            Log.Debug("Sending all portals to everybody");
             ZRoutedRpc.instance.InvokeRoutedRPC(ZRoutedRpc.Everybody, RPCManager.RPC_RESYNC, pkg);
         }
 

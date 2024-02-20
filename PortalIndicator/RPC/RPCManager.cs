@@ -19,12 +19,14 @@ namespace PortalIndicator.RPC
 
         public static void Register()
         {
+            ZRoutedRpc.instance.Register(RPC_SYNCREQUEST, new Action<long, string>(Server.SyncRequest));
+            ZRoutedRpc.instance.Register(RPC_RESYNC, new Action<long, ZPackage>(Client.ReceiveResync));
             // Server RPCs
             //ZRoutedRpc.instance.Register(RPC_SYNCPORTAL, new Action<long, ZPackage>(Client.ClientEvents.RPC_SyncPortal));
-            ZRoutedRpc.instance.Register(RPC_RESYNC, new Action<long, ZPackage>(Client.ReceiveResync));
+            
 
             // Client RPCs
-            ZRoutedRpc.instance.Register(RPC_SYNCREQUEST, new Action<long, string>(Server.SyncRequest));
+            
             //ZRoutedRpc.instance.Register(RPC_ADDORUPDATEREQUEST, new Action<long, ZPackage>(Server.ServerEvents.RPC_AddOrUpdateRequest));
             //ZRoutedRpc.instance.Register(RPC_REMOVEREQUEST, new Action<long, ZDOID>(Server.ServerEvents.RPC_RemoveRequest));
         }

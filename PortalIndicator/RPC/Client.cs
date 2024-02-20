@@ -12,13 +12,18 @@ namespace PortalIndicator.RPC
     {
         public static void RequestSync(string reason)
         {
-            Log.Info($"Asking server for a sync request, because: {reason}");
+            Log.Debug($"Asking server for a sync request, because: {reason}");
             ZRoutedRpc.instance.InvokeRoutedRPC(Environment.ServerPeerId, RPCManager.RPC_SYNCREQUEST, reason);
         }
 
         public static void ReceiveResync(long sender, ZPackage pkg)
         {
-            Log.Info("Client has received resync request");
+            //if (Environment.IsServer)
+            //{
+            //    Log.Info("Ignoring resync package, im a server");
+            //    return;
+            //}
+
             PortalIndicator.UpdateFromPackage(pkg);
         }
     }

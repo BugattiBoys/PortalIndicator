@@ -22,5 +22,8 @@ namespace PortalIndicator
                 return ZRoutedRpc.instance.GetServerPeerID();
             }
         }
+
+        internal static bool GameStarted { get; set; } = false;
     }
 }
+

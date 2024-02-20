@@ -12,7 +12,17 @@ namespace PortalIndicator.Patches
     {
         static void Postfix()
         {
+            Environment.GameStarted = true;
             PortalIndicator.GameStarted();
+        }
+    }
+
+    [HarmonyPatch(typeof(Game), nameof(Game.ConnectPortals))]
+    static class Game_ConnectPortals
+    {
+        static void Postfix()
+        {
+            PortalIndicator.RequestUpdate();
         }
     }
 }
